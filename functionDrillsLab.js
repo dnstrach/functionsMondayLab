@@ -307,8 +307,10 @@ let arrayEvaluator = bigOrSmall(bigOrSmallArray)
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
 /*
-  Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
-  The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
+  Write a function that is called theEliminator, which takes in two arguments, 
+  contestants (which will each be an array of strings), and loser (which will be a string).
+  The function should loop over the array of contestant names. 
+  If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
 //CODE HERE
@@ -319,16 +321,16 @@ let loser = 'Glimmer'
 //   }
 // }
 
-function theEliminator(contestants, loser) {
-  for (let i = 0; i < contestants.length; i++) {
-    if (contestants[i] === loser) {
-      contestants.splice(i, 1)
-    }
+function theEliminator (contestants, losers){
+  for(let i = 0; i < contestants.length; i++);
+  if(losers === contestants[i]){
+    contestants.splice(i, 1)
   }
   return contestants
 }
 
-let updatedContestants = theEliminator(contestants, loser)
+let winners = theEliminator(contestants, losers)
+console.log(winners)
 
 //return is inside scope, but outer within the inner
 
@@ -342,11 +344,10 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
-function makeUppercase(str) {
+const uppercase = (str) => {
   console.log(str.toUpperCase())
 }
-
-makeUppercase(sampleString)
+uppercaseVar = uppercase(sampleString)
 
 //chained uppercase string method to string variable/parameter
 
@@ -362,31 +363,35 @@ makeUppercase(sampleString)
   return 'must provide a valid email address'
 */
 
-function emailCheck(email) {
-  email = String(email).trim()
-
-  if (email.includes('@')) {
+const emailCheck = (email) => {
+  let newEmail = String(email).trim()
+  if (newEmail.includes('@')){
     return 'email verified'
   } else {
     return 'must provide a valid email address'
   }
 }
 
-//what is string called here?
+console.log(emailCheck('dnstrach@gmail.com'))
+console.log(emailCheck('notanemail'))
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
-  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
+  Write a function, naming it whatever you believe to be appropriate, 
+  that buys as many chocolate frogs as possible with a certain amount of gold. 
+  Each chocolate frog costs 3 gold. Your function should take in a single parameter, 
+  which is the amount of gold you are willing to spend. 
+  Your function should return a total amount of chocolate frogs you were able to purchase.
+  Create a variable called `totalFrogs` and set it equal to your function invoked, 
+  passing in the amount of gold you are willing to spend.
 */
 
 //CODE HERE
-function frogPurchaser(gold) {
+const frog = (gold) => {
   return gold / 3
 }
 
-let totalFrogs = frogPurchaser(100)
-
+let totalFrogs = frog(100)
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -410,10 +415,15 @@ let totalFrogs2 = frogPurchaser2(100)
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+  Write a function that takes in an array of numbers as an argument. 
+  In the body of the function, write logic to determine if the array is in ascending order. 
+  The function should return true, if it is sorted in ascending order, false if it is not. 
+  Create a variable, `arrayIsAscending` and set it equal to your function invoked. 
+  Use the sample array to test this function.
 */
 
 //CODE HERE
+
 function checkArrayAscending(arr) {
   let comparisonValue = arr[0]
   for (let i = 1; i < arr.length - 1; i++) {
@@ -447,17 +457,18 @@ function pond() {
 /*
   There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
   All within different scopes.
-  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
+  Given the functions and variables above, 
+  edit the arrays below to contain only the appropriate variable names (as strings).
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberduck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck', 'rubberduck', 'sailorduck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'rubberduck', 'realDuck']
